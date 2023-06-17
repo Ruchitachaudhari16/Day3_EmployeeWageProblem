@@ -10,8 +10,8 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            //UC4:- EmployeeWages using Switch case
-            EmployeeAttendance.EmployeeWagesCalculation();
+            //UC5:- Calculate total EmployeeWAges
+            EmployeeAttendance.TotalEmployeeWages();
             Console.ReadLine();
         }
     }
