@@ -10,9 +10,9 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to EmployeeWage Computation Problem");
-            //UC1-EmployeeAttendance
-            EmployeeAttendance.EmployeeCheck();
+            //UC3:- Add
+            //Part time Employee Wage 
+            EmployeeAttendance.EmployeeWage();
             Console.ReadLine();
         }
     }
