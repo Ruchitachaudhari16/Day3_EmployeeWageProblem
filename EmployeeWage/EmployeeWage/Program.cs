@@ -10,8 +10,8 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            //UC5:- Calculate total EmployeeWAges
-            EmployeeAttendance.TotalEmployeeWages();
+            //UC6: Calculating wages till number of Working days.
+            EmployeeAttendance.CalculateEmployeeWages();
             Console.ReadLine();
         }
     }

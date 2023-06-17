@@ -7,25 +7,27 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage
 {
-    //UC5-Calculating Wages for Month 
+    //UC6-Calculating Wages till Number of Working Days or Total Working Hours per month isReached
   public class EmployeeAttendance
     {
         public  const int IS_PART_TIME = 1;
         public const  int IS_FULL_TIME = 2;
-
-       public const  int EMP_RATE_PER_HOUR = 20;
+        public const  int EMP_RATE_PER_HOUR = 20;
         public const int NUM_OF_WORKING_DAYS = 2;
-        public static void TotalEmployeeWages()
+        public const int MAX_HRS_IN_MONTH = 10;
+        public static void CalculateEmployeeWages()
         {   //Variables
             int emp_Hrs = 0;
-         int emp_Wage = 0;
+            int totalEmpHrs = 0;
+            int totalWorkingDays = 0;
             int total_emp_wage = 0;
 
-        //random function
-        Random random = new Random();
-            int empCheck = random.Next(0,3);
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
+                totalWorkingDays++;
+                //random function
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
                 switch (empCheck)
                 {
                     case IS_PART_TIME:
@@ -38,10 +40,10 @@ namespace EmployeeWage
                         emp_Hrs = 0;
                         break;
                 }
-                emp_Wage = emp_Hrs * EMP_RATE_PER_HOUR;
-                total_emp_wage += emp_Wage;
-                Console.WriteLine("Employee wage:" + emp_Wage);
+                totalEmpHrs += emp_Hrs;
+                Console.WriteLine("Days:" + totalWorkingDays + "Emp Hrs: " + emp_Hrs);
             }
+            int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Total Employee Wage:" +total_emp_wage);
 
         }
