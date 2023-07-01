@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployeeWage
-{  //UC7:-Refactor the Codeto write a ClassMethod to Compute Employee Wage - Use Class Method and Class
+{//UC8 :- Compute Employee Wage for multiple companies - Note: Each Company has its own
     public class EmployeeAttendance
     {
+
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
-        public const int EMP_RATE_PER_HOUR = 20;
-        public const int MAX_WORKING_DAYS = 20;
-        public const int MAX_WORKING_HOURS = 100;
-
-        public static int ComputeEmpWage()
+        public static int ComputeEmpWage(string Company, int EMP_RATE_PER_HOUR, int MAX_WORKING_DAYS, int MAX_WORKING_HOURS)
         {
             //Variables
             int empHrs = 0;
@@ -44,8 +42,11 @@ namespace EmployeeWage
                 Console.WriteLine("Day: " + numOfWorkinDays + "Employee Hours : " + empHrs);
             }
             salary = numOfWorkingHours * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Salary of Month : " + salary);
+            Console.WriteLine("Total Employee Wage for Company : " + Company + " is : " + salary);
             return salary;
         }
+     
     }
 }
+   
+
